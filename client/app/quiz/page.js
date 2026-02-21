@@ -26,7 +26,7 @@ export default function Quiz() {
     } else {
       setToken(storedToken);
     }
-  }, []);
+  }, [router]);
 
   // ✅ Auto Submit
   const autoSubmit = async (tabCount) => {
@@ -158,7 +158,7 @@ export default function Quiz() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [quizStarted]);
+  }, [quizStarted, tabSwitch]);
 
   // ✅ 4️⃣ Tab Switch Detection
   useEffect(() => {
